@@ -19,7 +19,7 @@ namespace api_orderinfos.Controllers
                 list.Add(new
                 {
                     OrderNo = Guid.NewGuid(),
-                    Price = i * 2,
+                    Price = (i+1) * 2,
                     Size=40,
                     Color=i==0?"red":i==2?"green":"black",
                     CreatedTime = DateTime.Now,
