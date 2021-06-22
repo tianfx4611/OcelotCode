@@ -1,0 +1,73 @@
+{
+  "Routes": [
+    {
+
+      //上游Api请求格式
+      "UpstreamPathTemplate": "/order_api/{controller}/{action}",
+      //网关转发到下游格式
+      "DownstreamPathTemplate": "/api/{controller}/{action}",
+      //上下游支持请求方法
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ],
+      "DownstreamScheme": "http",
+      //下游服务配置
+      "DownstreamHostAndPorts": [
+        {
+          //下游地址
+          "Host": "localhost",
+          //下游端口号
+          "Port": 5001
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true, //开启限流
+
+        "Period": "1s", //限流的时间区间为1s
+        "PeriodTimespan": 1, //限流后重置时间
+        "Limit": 1 //限制请求的数量
+      }
+    },
+    {
+      //上游Api请求格式
+      "UpstreamPathTemplate": "/user_api/{controller}/{action}",
+      //网关转发到下游格式
+      "DownstreamPathTemplate": "/api/{controller}/{action}",
+      //上下游支持请求方法
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ],
+      "DownstreamScheme": "http",
+      //下游服务配置
+      "DownstreamHostAndPorts": [
+        {
+          //下游地址
+          "Host": "localhost",
+          //下游端口号
+          "Port": 5002
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true, //开启限流
+
+        "Period": "3s", //限流的时间区间为1s
+        "PeriodTimespan": 1, //限流后重置时间
+        "Limit": 1 //限制请求的数量
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    //外部暴露的Url
+    //"BaseUrl": "http://localhost:8080",
+    //限流扩展配置
+    "RateLimitOptions": {
+      //Http头  X-Rate-Limit 和 Retry-After 是否禁用
+      "DisableRateLimitHeaders": false,
+      //当请求过载被截断时返回的消息
+      "QuotaExceededMessage": "Customize Tips!",
+      //当请求过载被截断时返回的http status
+      "HttpStatusCode": 999,
+      //用来识别客户端的请求头，默认是 ClientId
+      "ClientIdHeader": "ClientId"
+    }
+  }
+}
+
+
+
