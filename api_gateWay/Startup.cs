@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,7 +28,7 @@ namespace api_gateWay
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddOcelot(Configuration);
+            services.AddOcelot(Configuration);//×¢Èëocelot·þÎñ
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,7 +38,7 @@ namespace api_gateWay
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseOcelot();
+           
             app.UseRouting();
 
             app.UseAuthorization();
@@ -46,7 +47,7 @@ namespace api_gateWay
             {
                 endpoints.MapControllers();
             });
-
+            app.UseOcelot();
         }
     }
 }

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api_gateWay", "api_gateWay\api_gateWay.csproj", "{515EC59C-EDA3-45E9-8B51-887E3AB504A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api_gateWay", "api_gateWay\api_gateWay.csproj", "{515EC59C-EDA3-45E9-8B51-887E3AB504A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api_users", "api_users\api_users.csproj", "{3DE2FDA0-49F7-478E-BCEC-A7CAF9C922CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api_users", "api_users\api_users.csproj", "{3DE2FDA0-49F7-478E-BCEC-A7CAF9C922CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api_orderinfos", "api_orderinfos\api_orderinfos.csproj", "{8B2C11C2-18AF-4FBA-9C18-E66123FC2889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api_orderinfos", "api_orderinfos\api_orderinfos.csproj", "{8B2C11C2-18AF-4FBA-9C18-E66123FC2889}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
